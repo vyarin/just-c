@@ -41,7 +41,7 @@ void itoa(int n, char s[])
         s[i++] = '-';
     }
     s[i] = '\0';
-    // reverse(s);
+    reverse(s);
 }
 
 void reverse(char s[])
