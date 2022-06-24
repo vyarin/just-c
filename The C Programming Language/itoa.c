@@ -40,7 +40,7 @@ void itoa(int n, char s[])
     {
         s[i++] = '-';
     }
-    s[i] = '/0';
+    s[i] = '\0';
     // reverse(s);
 }
 
