@@ -16,10 +16,6 @@ void itoa(int n, char s[])
 {
     int i, sign;
 
-    // if ((sign = n) < 0)
-    // {
-    //     n = -n;
-    // }
     sign = n;
     i = 0;
     if (sign >= 0)
