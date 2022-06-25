@@ -34,7 +34,7 @@ void itoa(int n, char s[])
         do
         {
             s[i++] = -(n % -10) + '0';
-        } while (-(n /= -10) > 0);
+        } while (-(n /= 10) > 0);
     }
     if (sign < 0)
     {
