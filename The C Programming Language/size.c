@@ -2,36 +2,6 @@
 #include <float.h>
 #include <limits.h>
 
-// short exponent(int coefficient, int exponent);
-
-// int main(void) {
-//     int exp = 1;
-//     int range_integer = 2;
-//     int max_int = 0;
-//     float range_float = 2;
-//     short range_short = 2;
-
-//     while (exponent(range_integer, exp) > 0) {
-//         max_int = exponent(range_integer, exp);
-//         printf("%i\n", max_int);
-//         // printf("%i\n", range_integer);
-//         exp++;
-//     }
-
-//     printf("%i\n", exponent(range_integer, exp) - 1);
-//     return 0;
-// }
-
-// short exponent(int coefficient, int exponent) {
-//     int power = 1;
-    
-//     for (int i = 0; i < exponent; i++) {
-//         power *= coefficient;
-//         // printf("%i\n", power);
-//     }
-//     return power;
-// }
-
 int main(void) {
     // Get range of integer
     int max_int = 1;
