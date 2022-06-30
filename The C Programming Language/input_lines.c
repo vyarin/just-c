@@ -1,7 +1,7 @@
 #include <stdio.h>
 // write a program to print all input lines that are longer than 80 characters
 #define MAX_LENGTH 1000
-#define MIN_LENGTH 10
+#define MIN_LENGTH 80
 
 int line_length(char line[]);
 
