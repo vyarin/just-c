@@ -29,17 +29,17 @@ int itob(int num, char str[], int base)
         int digit = num % base;
         if (digit > 9)
         {
-            str[position++] = digit + 55;
+            digit += 55;
         }
         else 
         {
-            str[position++] = digit + '0';
+            digit += '0';
         }
+        str[position++] = digit;
         num /= base;
     } while (num != 0);
 
     str[position] = '\0';
-
     return 1;
 }
 
