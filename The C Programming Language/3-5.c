@@ -7,6 +7,8 @@
 
 int itob(int num, char str[], int base);
 
+void reverse(char str[]);
+
 int main(void)
 {
     char strin[1000];
@@ -37,6 +39,22 @@ int itob(int num, char str[], int base)
     } while (num != 0);
 
     str[position] = '\0';
-    
+
     return 1;
+}
+
+void reverse(char str[])
+{
+    int len = 0;
+    for (int i = 0; str[i] != '\0'; i++)
+    {
+        len++;
+    }
+
+    for (int i = 0; i < (len/2); i++)
+    {
+        int tmp = str[i];
+        str[i] = str[len-i-1];
+        str[len-i-1] = tmp;
+    }
 }
