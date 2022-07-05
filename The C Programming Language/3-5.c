@@ -54,6 +54,9 @@ int itob(int num, char str[], int base)
     }
 
     str[position] = '\0';
+
+    reverse(str);
+    
     return 1;
 }
 
