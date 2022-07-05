@@ -20,6 +20,8 @@ int main(void)
 int itob(int num, char str[], int base)
 {
     int is_negative = 0;
+    int position = 0;
+
     if (base > 36 || base < 1) // Cut off maximum unique digits at 36 (0-9, A-Z)
     {
         return -1;
@@ -31,7 +33,6 @@ int itob(int num, char str[], int base)
         num *= -1;
     }
 
-    int position = 0;
     do
     {
         int digit = num % base;
