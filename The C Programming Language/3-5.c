@@ -7,5 +7,8 @@
 
 int main(void)
 {
+    char strin[1000];
+    itob(240, strin, 16);
+    printf("%s", strin);
     return 0;
 }
