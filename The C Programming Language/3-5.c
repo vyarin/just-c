@@ -19,10 +19,18 @@ int main(void)
 
 int itob(int num, char str[], int base)
 {
+    int is_negative = 0;
     if (base > 36 || base < 1) // Cut off maximum unique digits at 36 (0-9, A-Z)
     {
         return -1;
     }
+
+    if (num < 1)
+    {
+        is_negative = 1;
+        num *= -1;
+    }
+
     int position = 0;
     do
     {
@@ -38,6 +46,11 @@ int itob(int num, char str[], int base)
         str[position++] = digit;
         num /= base;
     } while (num != 0);
+
+    if (is_negative)
+    {
+        str[position++] = '-';
+    }
 
     str[position] = '\0';
     return 1;
