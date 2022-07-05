@@ -3,6 +3,16 @@
 
 #include <stdio.h>
 
+void squeeze(char s1[], char s2[]);
+
+int main(void)
+{
+    char s1[] = "eovdedn";
+    char s2[] = "even";
+    squeeze(s1, s2);
+    printf("%s", s1);
+}
+
 void squeeze(char s1[], char s2[])
 {
     int position = 0;
