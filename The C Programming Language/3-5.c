@@ -35,6 +35,8 @@ int itob(int num, char str[], int base)
         }
         num /= base;
     } while (num != 0);
+
     str[position] = '\0';
+    
     return 1;
 }
