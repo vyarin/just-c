@@ -6,14 +6,14 @@
 
 #include <stdio.h>
 
-void squeeze(char s1[], char s2[]);
+void any(char s1[], char s2[]);
 
 int main(void)
 {
     return 0;
 }
 
-void squeeze(char s1[], char s2[])
+void any(char s1[], char s2[])
 {
     int position = 0;
     for (int i = 0; s2[i] != '\0'; i++)
