@@ -16,6 +16,13 @@ int main(void)
 
 void itoa(int n, char s[], int width)
 {
+    int ncpy = n;
+    int digits = 0;
+    do
+    {
+        digits++;
+    } while ((ncpy /= 10) != 0);
+    
     int i, sign;
 
     sign = n;
