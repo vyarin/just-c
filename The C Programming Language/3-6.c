@@ -7,6 +7,7 @@
 #include <stdio.h>
 
 void itoa(int n, char s[]);
+void reverse(char s[]);
 
 int main(void)
 {
@@ -39,4 +40,20 @@ void itoa(int n, char s[])
     }
     s[i] = '\0';
     reverse(s);
+}
+
+void reverse(char s[])
+{
+    int len = 0;
+    for (int i = 0; s[i] != '\0'; i++)
+    {
+        len++;
+    }
+
+    for (int i = 0; i < (len/2); i++)
+    {
+        int tmp = s[i];
+        s[i] = s[len-i-1];
+        s[len-i-1] = tmp;
+    }
 }
