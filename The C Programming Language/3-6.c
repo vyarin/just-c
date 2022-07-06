@@ -6,7 +6,7 @@
 
 #include <stdio.h>
 
-void itoa(int n, char s[]);
+void itoa(int n, char s[], int width);
 void reverse(char s[]);
 
 int main(void)
@@ -14,7 +14,7 @@ int main(void)
     return 0;
 }
 
-void itoa(int n, char s[])
+void itoa(int n, char s[], int width)
 {
     int i, sign;
 
