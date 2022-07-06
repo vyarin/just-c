@@ -11,6 +11,10 @@ void reverse(char s[]);
 
 int main(void)
 {
+    char s[1000];
+    int num = 23949;
+    itoa(num, s, 8);
+    printf("%s\n", s);
     return 0;
 }
 
