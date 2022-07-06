@@ -45,6 +45,15 @@ void itoa(int n, char s[], int width)
     {
         s[i++] = '-';
     }
+
+    if (digits < width)
+    {
+        for (int j = 0; j < width - digits; j++)
+        {
+            s[i++] = ' ';
+        }
+    }
+
     s[i] = '\0';
     reverse(s);
 }
