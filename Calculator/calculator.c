@@ -18,3 +18,11 @@ int main(void)
 {
     return 0;
 }
+
+void push(node **stack, char value)
+{
+    node *new = malloc(sizeof(node));
+    new->value = value;
+    new->next = *stack;
+    *stack = new;
+}
