@@ -10,7 +10,7 @@ node;
 
 void push(node **stack, char value);
 
-int pop(node **stack);
+char pop(node **stack);
 
 int is_empty(node *stack);
 
