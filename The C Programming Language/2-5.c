@@ -25,8 +25,6 @@ int any(char s1[], char s2[])
                 return j;
             }
         }
-        s1[position] = '\0';
-        position = 0;
     }
     return -1;
 }
