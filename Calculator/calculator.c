@@ -8,6 +8,12 @@ typedef struct node
 }
 node;
 
+void push(node **stack, char value);
+
+int pop(node **stack);
+
+int is_empty(node *stack);
+
 int main(void)
 {
     return 0;
