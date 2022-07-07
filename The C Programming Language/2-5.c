@@ -20,7 +20,7 @@ void any(char s1[], char s2[])
     {
         for (int j = 0; s1[j] != '\0'; j++)
         {
-            if (s2[i] != s1[j])
+            if (s2[i] == s1[j])
             {
                 s1[position++] = s1[j];
             }
