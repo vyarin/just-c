@@ -6,14 +6,14 @@
 
 #include <stdio.h>
 
-void any(char s1[], char s2[]);
+int any(char s1[], char s2[]);
 
 int main(void)
 {
     return 0;
 }
 
-void any(char s1[], char s2[])
+int any(char s1[], char s2[])
 {
     int position = 0;
     for (int i = 0; s2[i] != '\0'; i++)
@@ -22,10 +22,11 @@ void any(char s1[], char s2[])
         {
             if (s2[i] == s1[j])
             {
-                s1[position++] = s1[j];
+                return j;
             }
         }
         s1[position] = '\0';
         position = 0;
     }
+    return -1;
 }
