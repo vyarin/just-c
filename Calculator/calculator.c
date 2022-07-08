@@ -3,12 +3,12 @@
 
 typedef struct node
 {
-    char value;
+    int value;
     struct node *next;
 }
 node;
 
-void push(node **stack, char value);
+void push(node **stack, int value);
 
 char pop(node **stack);
 
@@ -19,7 +19,7 @@ int main(void)
     return 0;
 }
 
-void push(node **stack, char value)
+void push(node **stack, int value)
 {
     node *new = malloc(sizeof(node));
     new->value = value;
