@@ -15,6 +15,8 @@ char pop(node **stack);
 
 int is_empty(node *stack);
 
+int precedence(char operator);
+
 int eval(char *expression);
 
 int main(void)
@@ -44,6 +46,37 @@ char pop(node **stack)
 int is_empty(node *stack)
 {
     return !stack;
+}
+
+int precedence(char operator)
+{
+    int op_precedence = 0;
+    switch (operator)
+    {
+    case '^':
+        op_precedence = 4;
+        break;
+    
+    case '/':
+        op_precedence = 3;
+        break;
+    
+    case '*':
+        op_precedence = 3;
+        break;
+    
+    case '+':
+        op_precedence = 2;
+        break;
+    
+    case '-':
+        op_precedence = 2;
+        break;
+    
+    default:
+        break;
+    }
+    return op_precedence;
 }
 
 int eval(char *expression)
