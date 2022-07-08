@@ -45,3 +45,22 @@ int is_empty(node *stack)
 {
     return !stack;
 }
+
+int eval(char *expression)
+{
+    int in_num = 0;
+    int current_num = 0;
+    for (int i = 0; expression[i] != '\0'; i++)
+    {
+        if (isdigit(expression[i]))
+        {
+            if (!in_num)
+            {
+                in_num = 1;
+            }
+            current_num *= 10;
+            current_num += i;
+        }
+    }
+    return 0;
+}
