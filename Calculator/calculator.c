@@ -110,9 +110,9 @@ int eval(char *expression)
                        && (precedence(operators->value) >= curr_op_prec || 
                           (precedence(operators->value) == curr_op_prec && curr_op_prec != 4)))
                 {
-                    pop(*operators);
+                    pop(&operators);
                 }
-                push(*operators, expression[i]);
+                push(&operators, expression[i]);
             }
         }
     }
