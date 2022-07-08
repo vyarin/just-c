@@ -14,6 +14,8 @@ char pop(node **stack);
 
 int is_empty(node *stack);
 
+int eval(char *expression);
+
 int main(void)
 {
     return 0;
