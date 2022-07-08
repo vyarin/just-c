@@ -96,6 +96,13 @@ int eval(char *expression)
             current_num *= 10;
             current_num += i;
         }
+        else
+        {
+            if (in_num)
+            {
+                // Push to output queue
+            }
+        }
     }
     return 0;
 }
