@@ -102,6 +102,18 @@ int eval(char *expression)
             {
                 // Push to output queue
             }
+            
+            if (precedence(expression[i]))
+            {
+                int curr_op_prec = precedence(expression[i]);
+                while (!is_empty(operators) && operators->value != ')' 
+                       && (precedence(operators->value) >= curr_op_prec || 
+                          (precedence(operators->value) == curr_op_prec && curr_op_prec != 4)))
+                {
+                    pop(*operators);
+                }
+                push(*operators, expression[i]);
+            }
         }
     }
     return 0;
