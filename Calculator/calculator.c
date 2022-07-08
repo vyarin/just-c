@@ -109,7 +109,7 @@ int eval(char *expression)
 
                 while ((!is_empty(operators) && operators->value != ')') 
                        && (precedence(operators->value) >= curr_op_prec || 
-                          (precedence(operators->value) == curr_op_prec && curr_op_prec != 4)))
+                          (precedence(operators->value) == curr_op_prec && curr_op_prec != 4))) // Exponents are right associative
                 {
                     pop(&operators);
                 }
