@@ -37,3 +37,8 @@ char pop(node **stack)
     }
     return -1;
 }
+
+int is_empty(node *stack)
+{
+    return !stack;
+}
