@@ -9,6 +9,8 @@ typedef struct node
 }
 node;
 
+node *operators = NULL;
+
 void push(node **stack, int value);
 
 char pop(node **stack);
