@@ -26,3 +26,14 @@ void push(node **stack, int value)
     new->next = *stack;
     *stack = new;
 }
+
+char pop(node **stack)
+{
+    node *tmp = *stack;
+    if (tmp) // Only pop if list is not empty
+    {
+        *stack = tmp->next;
+        return tmp->value;
+    }
+    return -1;
+}
