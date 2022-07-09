@@ -87,7 +87,8 @@ int eval(char *expression)
     int current_num = 0;
     for (int i = 0; expression[i] != '\0'; i++)
     {
-        if (isdigit(expression[i]))
+        char exp = expression[i];
+        if (isdigit(exp))
         {
             if (!in_num)
             {
@@ -103,9 +104,9 @@ int eval(char *expression)
                 // Push to output queue
             }
 
-            if (precedence(expression[i]))
+            if (precedence(exp))
             {
-                int curr_op_prec = precedence(expression[i]);
+                int curr_op_prec = precedence(exp);
 
                 while ((!is_empty(operators) && operators->value != ')') 
                        && (precedence(operators->value) > curr_op_prec || 
@@ -113,12 +114,12 @@ int eval(char *expression)
                 {
                     pop(&operators);
                 }
-                push(&operators, expression[i]);
+                push(&operators, exp);
             }
 
-            if (expression[i] == '(')
+            if (exp == '(')
             {
-                push(&operators, expression[i]);
+                push(&operators, exp);
             }
         }
     }
