@@ -106,11 +106,11 @@ int eval(char *expression)
 
             if (precedence(exp))
             {
-                int curr_op_prec = precedence(exp);
+                int current_operator_precedence = precedence(exp);
 
                 while ((!is_empty(operators) && operators->value != ')') 
-                       && (precedence(operators->value) > curr_op_prec || 
-                          (precedence(operators->value) == curr_op_prec && curr_op_prec != 4))) // Exponents are right associative
+                       && (precedence(operators->value) > current_operator_precedence || 
+                          (precedence(operators->value) == current_operator_precedence && current_operator_precedence != 4))) // Exponents are right associative
                 {
                     pop(&operators);
                 }
