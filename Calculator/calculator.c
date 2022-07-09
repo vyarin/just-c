@@ -115,6 +115,11 @@ int eval(char *expression)
                 }
                 push(&operators, expression[i]);
             }
+
+            if (expression[i] == '(')
+            {
+                push(&operators, expression[i]);
+            }
         }
     }
     return 0;
