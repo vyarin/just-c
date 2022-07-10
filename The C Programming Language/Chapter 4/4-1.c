@@ -5,6 +5,8 @@
 
 #include <stdio.h>
 
+int strrindex(char string[], char pattern[]);
+
 int main(void)
 {
     return 0;
