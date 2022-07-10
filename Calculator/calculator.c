@@ -121,6 +121,23 @@ int eval(char *expression)
             {
                 push(&operators, exp);
             }
+
+            if (exp == ')')
+            {
+                while (operators->value != '(')
+                {
+                    if (is_empty(operators))
+                    {
+                        // Error: Mismatched parentheses
+                    }
+                    // Pop operator into output queue
+                    pop(&operators);
+                }
+                if (operators->value == '(')
+                {
+                    pop(&operators);
+                }
+            }
         }
     }
     return 0;
