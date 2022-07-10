@@ -18,15 +18,6 @@ int main(void)
 
 unsigned invert(unsigned x, int p, int n)
 {   
-    unsigned mask = (~((~0) << n) << (p - 1)); // 0000 1111 0000 0000
+    unsigned mask = (~((~0) << n) << (p - 1));
     return ((x & (~mask)) | (~x & mask));
-    /*
-        original:
-        1010 1101 1111 1100
-        process:
-        1010 0000 1111 1100 (removes 1101)
-        0000 0010 0000 0000
-        =
-        1010 0010 1111 1100
-    */
 }

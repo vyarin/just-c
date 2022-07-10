@@ -28,10 +28,6 @@ int get_line(char line[]) {
     for (i = 0; (c = getchar()) != EOF && i != MAX_LINE - 1; i++) {
         line[i] = c;
     }
-    // if (c == '\n') {
-    //     line[i] = '\n';
-    //     i++;
-    // }
     line[i] = '\0';
     return i;
 
@@ -49,12 +45,6 @@ void remove_comments(char line[], char new_line[], int line_length) {
     int in_backslash = 0;
 
     for (int i = 0; i < line_length - 1; i++) {
-        // if (line[i] == '\\') {
-        //     new_line[new_line_position] = line[i];
-        //     new_line[new_line_position + 1] = line[i + 1];
-        //     i += 2;
-        //     new_line_position += 2;
-        // }
         if (!in_inline_comment && !in_multiline_comment) {
             if (in_backslash) {
                 in_backslash = 0;
@@ -63,7 +53,7 @@ void remove_comments(char line[], char new_line[], int line_length) {
                 in_backslash = 1;
             }
             else if (!in_constant && line[i] == '"') {
-                in_string = !in_string; // VERY BAD -- THIS -> "\"" WILL NOT WORK
+                in_string = !in_string;
             }
             else if (!in_string && line[i] == '\'') {
                 in_constant = !in_constant;
@@ -87,7 +77,7 @@ void remove_comments(char line[], char new_line[], int line_length) {
                 if (line[i] == '*' && line[i + 1] == '/') {
                     in_multiline_comment = 0;
                 }
-            } /* eguiesgusgisggs */
+            }
         }
 
 
@@ -97,8 +87,5 @@ void remove_comments(char line[], char new_line[], int line_length) {
         }
 
     }
-    // if (in_inline_comment >= 0) {
-    //     line[in_inline_comment] = '\0';
-    // }
     new_line[new_line_position] = '\0';
 }
