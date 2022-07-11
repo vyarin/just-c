@@ -4,6 +4,7 @@
 */
 
 #include <stdio.h>
+#include <string.h>
 
 int strrindex(char string[], char pattern[]);
 
