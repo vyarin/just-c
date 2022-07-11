@@ -10,6 +10,7 @@ int strrindex(char string[], char pattern[]);
 
 int main(void)
 {
+    printf("%i, %c", strrindex("Spiral staircase Rhinoceros beetle Desolation Row Fig tart Rhinoceros beetle", "beetle"));
     return 0;
 }
 
