@@ -1,4 +1,4 @@
-/* 
+/*
    Write the function strrindex (s, t), which returns the position
    of the rightmost occurrence of t in s, or -1 if there is none
 */
@@ -10,7 +10,7 @@ int strrindex(char string[], char pattern[]);
 
 int main(void)
 {
-    printf("%i, %c", strrindex("Spiral staircase Rhinoceros beetle Desolation Row Fig tart Rhinoceros beetle", "beetle"));
+    printf("%i", strrindex("Spiral staircase Rhinoceros beetle Desolation Row Fig tart Rhinoceros beetle", "beetle"));
     return 0;
 }
 
