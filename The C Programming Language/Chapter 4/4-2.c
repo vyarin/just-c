@@ -12,6 +12,9 @@ double atof(char s[]);
 
 int main(void)
 {
+    printf("%lf\n", atof("1.1e4"));
+    printf("%lf\n", atof("3.141592"));
+    printf("%lf\n", atof("5.2E-1"));
     return 0;
 }
 
