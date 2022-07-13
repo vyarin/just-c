@@ -67,7 +67,6 @@ double atof(char s[])
             base = 1 / base;
         }
     }
-    
 
     return (sign * val / power) * base;
 }
