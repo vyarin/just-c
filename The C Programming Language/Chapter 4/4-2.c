@@ -18,7 +18,7 @@ int main(void)
 double atof(char s[])
 {
     double val, power, exponent;
-    int i, sign;
+    double base = 1.0;
 
     for (i = 0; isspace(s[i]); i++);
 
