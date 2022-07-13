@@ -49,7 +49,6 @@ double atof(char s[])
     if (s[i] == 'e' || s[i] == 'E')
     {
         i++;
-    }
         exp_sign = (s[i] == '-') ? -1 : 1;
         if (s[i] == '+' || s[i] == '-')
         {
