@@ -47,23 +47,25 @@ double atof(char s[])
     {
         i++;
     }
-    exp_sign = (s[i] == '-') ? -1 : 1;
-    if (s[i] == '+' || s[i] == '-')
-    {
-        i++;
+        exp_sign = (s[i] == '-') ? -1 : 1;
+        if (s[i] == '+' || s[i] == '-')
+        {
+            i++;
+        }
+        for (exponent = 0.0; isdigit(s[i]); i++)
+        {
+            exponent = 10.0 * exponent + (s[i] - '0');
+        }
+        for (int i = 0; i < exponent; i++)
+        {
+            base *= 10.0;
+        }
+        if (exp_sign == -1)
+        {
+            base = 1 / base;
+        }
     }
-    for (exponent = 0.0; isdigit(s[i]); i++)
-    {
-        exponent = 10.0 * exponent + (s[i] - '0');
-    }
-    for (int i = 0; i < exponent; i++)
-    {
-        base *= 10.0;
-    }
-    if (exp_sign == -1)
-    {
-        base = 1 / base;
-    }
+    
 
     return (sign * val / power) * base;
 }
