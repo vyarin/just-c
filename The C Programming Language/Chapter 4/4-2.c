@@ -42,7 +42,7 @@ double atof(char s[])
         power *= 10.0;
     }
 
-    i++;
+
     if (s[i] == 'e' || s[i] == 'E')
     {
         i++;
