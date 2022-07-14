@@ -6,6 +6,7 @@
 #include <stdio.h>
 #include <stdlib.h> /* for atof() */
 #include <ctype.h>
+#include <math.h>
 
 #define MAXOP 100  /* max size of operand or operator */
 #define NUMBER '0' /* signal that a number wes found */
@@ -22,7 +23,7 @@ void ungetch(int);
 int main(void)
 {
     int type;
-    double op2;
+    double op1, op2;
     char s[MAXOP];
 
     while ((type = getop(s)) != EOF)
@@ -46,6 +47,11 @@ int main(void)
             op2 = pop();
             if (op2 != 0.0)
                 push(pop() / op2);
+            break;
+        case '%':
+            op2 = pop();
+            if (op2 != 0.0)
+                push(fmod(pop(), op2));
             break;
         case '\n':
             printf("\t%.8g\n", pop());
