@@ -13,3 +13,8 @@ int main(void)
 {
     return 0;
 }
+
+double top(void)
+{
+    return val[sp - 1];
+}
