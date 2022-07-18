@@ -5,6 +5,10 @@
 int sp = 0;
 double val[MAXVAL];
 
+double top(void);
+void duplicate_top(void);
+void swap_top(void);
+
 int main(void)
 {
     return 0;
