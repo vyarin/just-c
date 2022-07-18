@@ -18,3 +18,16 @@ double top(void)
 {
     return val[sp - 1];
 }
+
+void duplicate_top(void)
+{
+    double stack_top = top();
+    if (sp < MAXVAL)
+    {
+        val[sp++] = stack_top;
+    }
+    else
+    {
+        printf("error: stack full, can't push %g\n", stack_top);
+    }
+}
