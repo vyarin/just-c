@@ -31,3 +31,10 @@ void duplicate_top(void)
         printf("error: stack full, can't push %g\n", stack_top);
     }
 }
+
+void swap_top(void)
+{
+    double val1 = val[sp - 2];
+    val[sp - 2] = top();
+    val[sp - 1] = val1;
+}
