@@ -28,6 +28,9 @@ int main(void)
         case NUMBER:
             push(atof(s));
             break;
+        case '^':
+        case '&':
+        case '$':
         case '+':
             push(pop() + pop());
             break;
@@ -86,6 +89,11 @@ int getop(char s[])
     while ((s[0] = c = getch()) == ' ' || c == '\t')
         ;
     s[1] = '\0';
+    if (!isdigit(c) && c != '.')
+    {
+        return c; /* not a number */
+    }
+    i = 0;
     if (isdigit(c)) /* collect integer part */
         while (isdigit(s[++i] = c = getch()))
             ;
