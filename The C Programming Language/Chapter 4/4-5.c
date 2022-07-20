@@ -29,8 +29,6 @@ int main(void)
             push(atof(s));
             break;
         case '^':
-        case '&':
-        case '$':
         case '+':
             push(pop() + pop());
             break;
