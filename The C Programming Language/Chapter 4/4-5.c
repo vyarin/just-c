@@ -109,7 +109,7 @@ int getop(char s[])
         ungetch(c);
         return FUNCTION;
     }
-    if (c == '-')
+    if (c == '-') // negative number
     {
         if (!isdigit(c = getch()))
         {
