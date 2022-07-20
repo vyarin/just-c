@@ -93,12 +93,27 @@ int getop(char s[])
 {
     int i, c;
 
-    while ((s[0] = c = getch()) == ' ' || c == '\t')
+    while ((s[0] = c = getch()) == ' ' || c == '\t') // getching until we get something other than a tab/space
         ;
     s[1] = '\0';
-    if (!isdigit(c) && c != '.')
+    if (!isdigit(c) && c != '.' && c != '-')
+    {
         return c; /* not a number */
-    i = 0;
+    }
+    if (c == '-')
+    {
+        if (!isdigit(c = getch()))
+        {
+            ungetch(c);
+            return '-';
+        }
+        i = 0;
+        s[++i] = c;
+    }
+    else
+    {
+        i = 0;
+    }
     if (isdigit(c)) /* collect integer part */
         while (isdigit(s[++i] = c = getch()))
             ;
