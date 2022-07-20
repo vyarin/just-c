@@ -47,6 +47,11 @@ int main(void)
             if (op2 != 0.0)
                 push(pop() / op2);
             break;
+        case '%':
+            op2 = pop();
+            if (op2 != 0.0)
+                push(fmod(pop(), op2));
+            break;
         case '\n':
             printf("\t%.8g\n", pop());
             break;
@@ -90,11 +95,24 @@ int getop(char s[])
     while ((s[0] = c = getch()) == ' ' || c == '\t')
         ;
     s[1] = '\0';
-    if (!isdigit(c) && c != '.')
+    if (!isdigit(c) && c != '.' && c != '-')
     {
         return c; /* not a number */
     }
-    i = 0;
+    if (c == '-')
+    {
+        if (!isdigit(c = getch()))
+        {
+            ungetch(c);
+            return '-';
+        }
+        i = 0;
+        s[++i] = c;
+    }
+    else
+    {
+        i = 0;
+    }
     if (isdigit(c)) /* collect integer part */
         while (isdigit(s[++i] = c = getch()))
             ;
