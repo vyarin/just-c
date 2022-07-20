@@ -91,7 +91,8 @@ double pop(void)
 /* getop: get next operator or numberic operand */
 int getop(char s[])
 {
-    int i, c;
+    int i = 0;
+    int c;
 
     while ((s[0] = c = getch()) == ' ' || c == '\t')
         ;
@@ -102,7 +103,6 @@ int getop(char s[])
     }
     if (isalpha(c))
     {
-        i = 0;
         while (isalpha(s[++i] = c = getch()))
             ;
         s[i] = '\0';
@@ -116,12 +116,7 @@ int getop(char s[])
             ungetch(c);
             return '-';
         }
-        i = 0;
         s[++i] = c;
-    }
-    else
-    {
-        i = 0;
     }
     if (isdigit(c)) /* collect integer part */
         while (isdigit(s[++i] = c = getch()))
