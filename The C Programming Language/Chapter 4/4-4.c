@@ -8,6 +8,7 @@ double val[MAXVAL] = {4.0, 6.0, 7.0, 5.0};
 double top(void);
 void duplicate_top(void);
 void swap_top(void);
+void clear_stack(void);
 
 int main(void)
 {
@@ -43,4 +44,9 @@ void swap_top(void)
     double val1 = val[sp - 2];
     val[sp - 2] = top();
     val[sp - 1] = val1;
+}
+
+void clear_stack(void)
+{
+    sp = 0;
 }
