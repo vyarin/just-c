@@ -5,6 +5,7 @@
 
 #define MAXOP 100  /* max size of operand or operator */
 #define NUMBER '0' /* signal that a number was found */
+#define FUNCTION 'F' /* signal that a function was found */
 #define BUFFSIZE 100
 #define MAXVAL 100
 
@@ -95,9 +96,18 @@ int getop(char s[])
     while ((s[0] = c = getch()) == ' ' || c == '\t')
         ;
     s[1] = '\0';
-    if (!isdigit(c) && c != '.' && c != '-')
+    if (!isdigit(c) && c != '.' && c != '-' && !isalpha(c))
     {
         return c; /* not a number */
+    }
+    if (isalpha(c))
+    {
+        i = 0;
+        while (isalpha(s[++i] = c = getch()))
+            ;
+        s[i] = '\0';
+        ungetch(c);
+        return FUNCTION;
     }
     if (c == '-')
     {
