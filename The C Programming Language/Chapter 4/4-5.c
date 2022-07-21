@@ -31,6 +31,9 @@ int main(void)
         case NUMBER:
             push(atof(s));
             break;
+        case FUNCTION:
+            alpha_op(s);
+            break;
         case '^':
             op2 = pop();
             push(pow(pop(), op2));
