@@ -2,6 +2,7 @@
 #include <math.h>
 #include <stdlib.h> /* for atof() */
 #include <ctype.h>
+#include <string.h>
 
 #define MAXOP 100  /* max size of operand or operator */
 #define NUMBER '0' /* signal that a number was found */
@@ -14,6 +15,7 @@ void push(double);
 double pop(void);
 int getch(void);
 void ungetch(int);
+void alpha_op(char s[]);
 
 /* reverse Polish calculator */
 int main(void)
@@ -144,4 +146,28 @@ void ungetch(int c) /* push back on input */
         printf("ungetch: too many characters\n");
     else
         buf[bufp++] = c;
+}
+
+void alpha_op(char s[])
+{
+    if (!strcmp(s, "exp"))
+    {
+        push(exp(pop()));
+    }
+    else if (!strcmp(s, "sin"))
+    {
+        push(sin(pop()));
+    }
+    else if (!strcmp(s, "cos"))
+    {
+        push(cos(pop()));
+    }
+    else if (!strcmp(s, "tan"))
+    {
+        push(tan(pop()));
+    }
+    else
+    {
+        printf("error: unknown command %s\n", s);
+    }
 }
