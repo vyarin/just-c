@@ -16,6 +16,7 @@ double pop(void);
 int getch(void);
 void ungetch(int);
 void alpha_op(char s[]);
+double var_lookup(double v);
 
 /* reverse Polish calculator */
 int main(void)
