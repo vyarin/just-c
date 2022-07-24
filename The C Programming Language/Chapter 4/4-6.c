@@ -175,3 +175,10 @@ void alpha_op(char s[])
         printf("error: unknown command %s\n", s);
     }
 }
+
+double vars[26];
+
+double var_lookup(double v)
+{
+    return vars[toupper(v) - 'A'];
+}
