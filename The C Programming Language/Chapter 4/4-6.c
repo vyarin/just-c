@@ -7,6 +7,7 @@
 #define MAXOP 100  /* max size of operand or operator */
 #define NUMBER '0' /* signal that a number was found */
 #define FUNCTION 'F' /* signal that a function was found */
+#define VARIABLE 'V' /* signal that a variable was found */
 #define BUFFSIZE 100
 #define MAXVAL 100
 
