@@ -6,6 +6,7 @@ int getch(void);
 void ungetch(int);
 void ungets(char s[]);
 
+int pushback = 0;
 
 int main(void)
 {
