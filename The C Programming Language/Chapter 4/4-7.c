@@ -37,9 +37,6 @@ void ungets(char s[])
 {
     for (int i = 0; s[i] != '\0'; i++)
     {
-        if (bufp >= BUFFSIZE)
-            printf("ungetch: too many characters\n");
-        else
-            buf[bufp++] = s[i];
+        ungetch(s[i]);
     }
 }
