@@ -4,14 +4,17 @@
 
 int getch(void);
 void ungetch(int);
+void ungets(char s[]);
+
+char buf[BUFFSIZE]; /* buffer for ungetch */
+int bufp = 0;       /* next free position in buf */
 
 int main(void)
 {
     return 0;
 }
 
-char buf[BUFFSIZE]; /* buffer for ungetch */
-int bufp = 0;       /* next free position in buf */
+
 
 int getch(void) /* get a (possibly pushed back) character */
 {
