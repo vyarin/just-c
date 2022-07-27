@@ -104,7 +104,8 @@ int getop(char s[])
     {
         if (!isdigit(c = getch()))
         {
-            ungetch(c);
+            if (c != EOF)
+                ungetch(c);
             return '-';
         }
         i = 0;
