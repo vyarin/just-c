@@ -11,6 +11,11 @@ int bufp = 0;       /* next free position in buf */
 
 int main(void)
 {
+    ungets("hello");
+    for (int i = 0; i < BUFFSIZE; i++)
+    {
+        printf("%c", buf[i]);
+    }
     return 0;
 }
 
