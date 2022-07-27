@@ -6,8 +6,6 @@ int getch(void);
 void ungetch(int);
 void ungets(char s[]);
 
-char buf[BUFFSIZE]; /* buffer for ungetch */
-int bufp = 0;       /* next free position in buf */
 
 int main(void)
 {
