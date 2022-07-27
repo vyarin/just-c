@@ -20,7 +20,6 @@ int main(void)
 }
 
 
-
 int getch(void) /* get a (possibly pushed back) character */
 {
     return (bufp > 0) ? buf[--bufp] : getchar();
