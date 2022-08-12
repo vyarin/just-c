@@ -93,7 +93,7 @@ int getop(char s[])
 {
     int i, c;
 
-    while ((s[0] = c = getch()) == ' ' || c == '\t') // getching until we get something other than a tab/space
+    while ((s[0] = c = getch()) == ' ' || c == '\t')
         ;
     s[1] = '\0';
     if (!isdigit(c) && c != '.' && c != '-')
